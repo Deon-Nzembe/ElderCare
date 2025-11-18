@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyumbani Senior Centre</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html">Community Outreach</a></li>
+            <li><a href="Contacts.html">Contacts</a></li>
+        </ul>
+    </div>
+
+    <div class="slider">
+        <button class="slider-btn" onclick="previousImage()">&#10094;</button>
+        <img src="logo.png" alt="slider 1">
+        <img src="client 1.jpg" alt="Slider 2">
+        <img src="client 2.jpg" alt="Slider 3">
+        <img src="client 3.jpg" alt="slider 4">
+        <img src="front yard.jpg" alt="slider 5">
+        <img src="interior.jpeg" alt="slider 6">
+        <button class="slider-btn" onclick="nextImage()">&#10095;</button>
+    </div>
+   
+
+    
+    <script>
+        const images = document.querySelectorAll('.slider img');
+let currentIndex = 0;
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        if (i === index) {
+            img.style.display = 'block';
+        } else {
+            img.style.display = 'none';
+        }
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+function previousImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
+
+showImage(0);
+setTimeout(() => {
+    setInterval(nextImage, 5000); 
+}, 5000);
+
+    </script>
+
+</body>
+</html>
