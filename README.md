@@ -2,6 +2,8 @@
 
 A simple website for a fictional senior centre, built to practice front-end development and version control fundamentals.
 
+https://deon-nzembe.github.io/ElderCare/
+
 ## Pages
 - Home (`index.html`)
 - About (`About.html`)
